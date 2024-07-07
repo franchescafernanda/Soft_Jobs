@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 3000;
 const SECRET_KEY = process.env.SECRET_KEY;
 
-// Middleware para verificar credenciales
+// Middleware para verificar
 function checkCredentials(req, res, next) {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -23,7 +23,7 @@ function checkCredentials(req, res, next) {
   next();
 }
 
-// Middleware para autenticar
+//  para autenticar
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
@@ -81,7 +81,7 @@ app.post('/login', checkCredentials, async (req, res) => {
   }
 });
 
-// para obtener datos del usuario
+// para obtener losdatos del usuario
 app.get('/usuarios', authenticateToken, async (req, res) => {
   const { email } = req.user;
 
