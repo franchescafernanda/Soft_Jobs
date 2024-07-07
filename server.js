@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 3000;
 const SECRET_KEY = process.env.SECRET_KEY;
 
-// Middleware para verificar
+// para verificar
 function checkCredentials(req, res, next) {
   const { email, password } = req.body;
   if (!email || !password) {
